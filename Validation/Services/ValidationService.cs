@@ -2,7 +2,7 @@
 
 namespace Validation.Services
 {
-    public class Service
+    public class ValidationService
     {
         public IEnumerable<ValidationMessage> LearnerValidation(IEnumerable<Learner> learners)
         {
