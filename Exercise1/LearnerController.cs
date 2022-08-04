@@ -2,13 +2,13 @@
 using Validation.Rules;
 using ESFA.DC.Serialization.Json;
 
-namespace Exercise1
+namespace SLDBootcamp
 {
     public class LearnerController
     {
         public static List<Learner> ImportLearnerJson()
         {
-            string jsonFilenameHardcoded = "C:/dev/exercise/Exercise1/Exercise1/Learners/LearnersData.json"; // TODO: Hardcoded, place in a static data file
+            string jsonFilenameHardcoded = "C:/dev/exercise/SLDBootcamp/SLDBootcamp/Learners/LearnersData.json"; // TODO: Hardcoded, place in a static data file
             string jsonText = File.ReadAllText(jsonFilenameHardcoded);
             var jsonService = new JsonSerializationService();
             var importedlearners = jsonService.Deserialize<List<Learner>>(jsonText);
@@ -17,7 +17,7 @@ namespace Exercise1
 
         public static void ExportLearnerJson(List<Learner> learners)
         {
-            string jsonFileNameTargetHardcoded = "C:/dev/exercise/Exercise1/Exercise1/Learners/ExportedLearnersData.json"; // TODO: Hardcoded, place in a static data file
+            string jsonFileNameTargetHardcoded = "C:/dev/exercise/SLDBootcamp/SLDBootcamp/Learners/ExportedLearnersData.json"; // TODO: Hardcoded, place in a static data file
             var jsonService = new JsonSerializationService();
             var jsonString = jsonService.Serialize(learners);
             File.WriteAllText(jsonFileNameTargetHardcoded, jsonString);
@@ -28,10 +28,10 @@ namespace Exercise1
         {
             var customLearner = new Learner
             {
-                FamilyName = lastName,
-                GivenNames = firstName,
-                LearnRefNumber = reference,
-                Accom = accom
+                familyName = lastName,
+                givenNames = firstName,
+                learnRefNumber = reference,
+                accom = accom
             };
 
             return customLearner;

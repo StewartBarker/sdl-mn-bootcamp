@@ -1,6 +1,7 @@
-﻿using Exercise1;
+﻿using Validation.Models;
+using Validation.Rules;
 
-namespace Exercise2Tests
+namespace SLDBootcamp.Tests
 {
     public class Accom_1Tests
     {
@@ -8,12 +9,12 @@ namespace Exercise2Tests
         public void Validate_True()
         {
             // Arrange
-            var testLearner = new Exercise1.Learner
+            var testLearner = new Learner
             {
-                FamilyName = "Sterling",
-                GivenNames = "Ann",
-                LearnRefNumber = "Ref789",
-                Accom = 1
+                familyName = "Sterling",
+                givenNames = "Ann",
+                learnRefNumber = "Ref789",
+                accom = 1
             };
 
             // Act
@@ -26,12 +27,12 @@ namespace Exercise2Tests
         public void Validate_Accom_01_False()
         {
             // Arrange
-            var testLearner = new Exercise1.Learner
+            var testLearner = new Learner
             {
-                FamilyName = "Kayne",
-                GivenNames = "Rob",
-                LearnRefNumber = "Ref456",
-                Accom = 0
+                familyName = "Kayne",
+                givenNames = "Rob",
+                learnRefNumber = "Ref456",
+                accom = 0
             };
             // Act
             bool validityStatus = Accom_1.VerifyAccom(testLearner);

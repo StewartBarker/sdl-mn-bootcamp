@@ -1,4 +1,4 @@
-using Exercise1;
+using Validation.Models;
 
 namespace Exercise2Tests
 {
@@ -8,12 +8,12 @@ namespace Exercise2Tests
         public void Initialise_NotNull()
         {
             // Arrange & Act
-            var learner = new Exercise1.Learner
+            var learner = new Learner
             {
-                FamilyName = "Sterling",
-                GivenNames = "Ann",
-                LearnRefNumber = "Ref789",
-                Accom = 1
+                familyName = "Sterling",
+                givenNames = "Ann",
+                learnRefNumber = "Ref789",
+                accom = 1
             };
             // Assert
             Assert.NotNull(learner);
