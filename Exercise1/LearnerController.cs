@@ -1,4 +1,6 @@
-﻿using ESFA.DC.Serialization.Json;
+﻿using Validation.Models;
+using Validation.Rules;
+using ESFA.DC.Serialization.Json;
 
 namespace Exercise1
 {
@@ -20,20 +22,6 @@ namespace Exercise1
             var jsonString = jsonService.Serialize(learners);
             File.WriteAllText(jsonFileNameTargetHardcoded, jsonString);
             Console.WriteLine("\nLearners data exported successfully  ");
-        }
-
-        public static string GetDisplayName(Learner learner)
-        {
-            if (learner.FamilyName != null && learner.FamilyName != null)
-            {
-                string displayName = learner.GivenNames + " " + learner.FamilyName;
-                return displayName;
-            }
-            else
-            {
-                string displayName = "INVALID NAME";
-                return displayName;
-            }
         }
 
         private static Learner CreateCustomLearner(string firstName, string lastName, string reference, int accom)
