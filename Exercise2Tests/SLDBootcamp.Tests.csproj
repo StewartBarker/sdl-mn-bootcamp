@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Exercise1\Exercise1.csproj" />
+    <ProjectReference Include="..\Exercise1\SLDBootcamp.csproj" />
   </ItemGroup>
 
 </Project>

@@ -6,25 +6,25 @@ namespace SLDBootcamp
 {
     public class LearnerController
     {
-        public static List<Learner> ImportLearnerJson()
+        public List<Learner> ImportLearnerJson()
         {
-            string jsonFilenameHardcoded = "C:/dev/exercise/SLDBootcamp/SLDBootcamp/Learners/LearnersData.json"; // TODO: Hardcoded, place in a static data file
+            string jsonFilenameHardcoded = "Learners/LearnersData.json"; // TODO: Hardcoded, place in a static data file
             string jsonText = File.ReadAllText(jsonFilenameHardcoded);
             var jsonService = new JsonSerializationService();
             var importedlearners = jsonService.Deserialize<List<Learner>>(jsonText);
             return importedlearners;
         }
 
-        public static void ExportLearnerJson(List<Learner> learners)
+        public void ExportLearnerJson(List<Learner> learners)
         {
-            string jsonFileNameTargetHardcoded = "C:/dev/exercise/SLDBootcamp/SLDBootcamp/Learners/ExportedLearnersData.json"; // TODO: Hardcoded, place in a static data file
+            string jsonFileNameTargetHardcoded = "Learners/ExportedLearnersData.json"; // TODO: Hardcoded, place in a static data file
             var jsonService = new JsonSerializationService();
             var jsonString = jsonService.Serialize(learners);
             File.WriteAllText(jsonFileNameTargetHardcoded, jsonString);
             Console.WriteLine("\nLearners data exported successfully  ");
         }
 
-        private static Learner CreateCustomLearner(string firstName, string lastName, string reference, int accom)
+        private Learner CreateCustomLearner(string firstName, string lastName, string reference, int accom)
         {
             var customLearner = new Learner
             {
@@ -37,7 +37,7 @@ namespace SLDBootcamp
             return customLearner;
         }
 
-        public static List<Learner> CreateListOfCustomLearners()
+        public List<Learner> CreateListOfCustomLearners()
         {
             var exportLearners = new List<Learner>();
             Learner customLearner1 = CreateCustomLearner("Mary", "Sterling", "ref123", 1);
@@ -48,7 +48,7 @@ namespace SLDBootcamp
             return exportLearners;
         }
 
-        public static void ValidateListOflearners(List<Learner> listOfLearners)
+        public void ValidateListOflearners(List<Learner> listOfLearners)
         {
             foreach (var learner in listOfLearners)
             {

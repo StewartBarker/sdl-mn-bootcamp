@@ -19,4 +19,13 @@
     <ProjectReference Include="..\Validation\Validation.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Learners\ExportedLearnersData.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Learners\LearnersData.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

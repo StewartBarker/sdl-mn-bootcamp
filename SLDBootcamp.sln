@@ -3,18 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise1", "Exercise1\Exercise1.csproj", "{CEBB8B0B-29D0-4B98-A854-DD5DE68A6E68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SLDBootcamp", "Exercise1\SLDBootcamp.csproj", "{CEBB8B0B-29D0-4B98-A854-DD5DE68A6E68}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3CAA729F-1F06-448F-AE22-DCB5F273ADBD}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise2Tests", "Exercise2Tests\Exercise2Tests.csproj", "{07C83869-BCDB-4D54-8AAB-4DE2CAE78354}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SLDBootcamp.Tests", "Exercise2Tests\SLDBootcamp.Tests.csproj", "{07C83869-BCDB-4D54-8AAB-4DE2CAE78354}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validation", "Validation\Validation.csproj", "{CA2F09A7-3A47-4AF2-9A1A-87EA631DF415}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Validation", "Validation\Validation.csproj", "{CA2F09A7-3A47-4AF2-9A1A-87EA631DF415}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validation.Tests", "Validation.Tests\Validation.Tests.csproj", "{1A061D7F-695D-4276-9ABC-742595A9B79A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Validation.Tests", "Validation.Tests\Validation.Tests.csproj", "{1A061D7F-695D-4276-9ABC-742595A9B79A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
