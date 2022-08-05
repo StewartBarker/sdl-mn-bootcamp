@@ -21,7 +21,10 @@ namespace Validation.Services
         {
             foreach(var validationMessage in validationMessages)
             {
-                Console.WriteLine(validationMessage.messageBody);
+                if (validationMessage.messageBody != "")
+                {
+                    Console.WriteLine(validationMessage.messageBody);
+                }
             }
         }
     }

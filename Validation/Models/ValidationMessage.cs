@@ -25,13 +25,14 @@ namespace Validation.Models
 
         private string GenerateValidationMessage(Learner learner)
         {
+            string messageBody;
             var learnerIsValid = Accom_1.VerifyAccom(learner);
             if (learnerIsValid)
             {
-                string messageBody = string.Empty;
+                messageBody = "";
             } else
             {
-                string messageBody = $"The following learner is invalid:\n" +
+                messageBody = $"\nThe following learner is invalid:\n" +
                     $"First Name: {this.giveNames}\n" +
                     $"Last Name: {this.familyName}\n" +
                     $"Learner Ref Number: {this.learnerRef}\n";

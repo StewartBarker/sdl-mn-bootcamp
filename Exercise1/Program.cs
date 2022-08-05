@@ -23,8 +23,8 @@ namespace SLDBootcamp
             // Import Learner json Data
             var importedLearners = p.learnerController.ImportLearnerJson();
             p.learnerController.ValidateListOflearners(importedLearners);
-            p.validationService.LearnerValidation(importedLearners);
-
+            var validationMessages = p.validationService.LearnerValidation(importedLearners);
+            p.validationService.PrintValidationMessages(validationMessages);
 
             // Export Learner json Data
             /*
