@@ -1,14 +1,24 @@
 ﻿using Validation.Models;
 using Validation.Rules;
+using Validation.Services;
 using ESFA.DC.Serialization.Json;
 
 namespace SLDBootcamp
 {
     public class LearnerController
     {
+        private Accom_1 _accom_1Rule;
+        private ValidationService _validationService;
+
+        public LearnerController()
+        {
+            this._accom_1Rule = new Accom_1();
+            this._validationService = new ValidationService();
+        }
+
         public List<Learner> ImportLearnerJson()
         {
-            string jsonFilenameHardcoded = "Learners/LearnersData.json"; // TODO: Hardcoded, place in a static data file
+            string jsonFilenameHardcoded = "Learners/LearnersData.json";
             string jsonText = File.ReadAllText(jsonFilenameHardcoded);
             var jsonService = new JsonSerializationService();
             var importedlearners = jsonService.Deserialize<List<Learner>>(jsonText);
@@ -17,7 +27,7 @@ namespace SLDBootcamp
 
         public void ExportLearnerJson(List<Learner> learners)
         {
-            string jsonFileNameTargetHardcoded = "Learners/ExportedLearnersData.json"; // TODO: Hardcoded, place in a static data file
+            string jsonFileNameTargetHardcoded = "Learners/ExportedLearnersData.json"; 
             var jsonService = new JsonSerializationService();
             var jsonString = jsonService.Serialize(learners);
             File.WriteAllText(jsonFileNameTargetHardcoded, jsonString);
@@ -52,8 +62,11 @@ namespace SLDBootcamp
         {
             foreach (var learner in listOfLearners)
             {
-                Accom_1.CheckLearnerValidity(learner);
+                this._accom_1Rule.CheckLearnerValidity(learner);
             }
+            // Q: Should the following 2 lines be in their own method?
+            var validationMessages = this._validationService.LearnerValidation(this._accom_1Rule.invalidLearnerList);
+            this._validationService.PrintValidationMessages(validationMessages);
         }
     }
 }

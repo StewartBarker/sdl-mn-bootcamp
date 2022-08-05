@@ -1,19 +1,33 @@
 ﻿using Validation.Models;
+using Validation.Services;
 
 namespace Validation.Rules
 {
     public class Accom_1
     {
-        public static void CheckLearnerValidity (Learner learnerToCheck)
+        private ValidationService _validationService;
+        public List<Learner> invalidLearnerList { get; set; }
+
+        public Accom_1()
         {
-            bool validityStatus = VerifyAccom(learnerToCheck);
+            this._validationService = new ValidationService();
+            this.invalidLearnerList = new List<Learner>();
+        }
+
+        public void CheckLearnerValidity (Learner learnerToCheck)
+        {
+            bool validityStatus = this.VerifyAccom(learnerToCheck);
             string displayName = GetDisplayName(learnerToCheck);
             DisplayValidityMessage(displayName, validityStatus);
         }
 
-        public static bool VerifyAccom(Learner learnerToCheck)
+        public bool VerifyAccom(Learner learnerToCheck)
         {
             bool status = (learnerToCheck.accom == 1) ? true : false;
+            if (!status)
+            {
+                this.invalidLearnerList.Add(learnerToCheck);
+            }
             return status;
         }
         

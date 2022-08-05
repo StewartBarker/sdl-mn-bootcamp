@@ -5,15 +5,12 @@ namespace SLDBootcamp
     class Program
     {
 
-        LearnerController learnerController { get; set; }
-
-        ValidationService validationService { get; set; }
+        private LearnerController _learnerController { get; set; }
 
         public Program()
         {
-            // Not sure if the Program class is the most suitable place to initalise these...
-            this.learnerController = new LearnerController();
-            this.validationService = new ValidationService();
+            // Q: Not sure if the Program class is the most suitable place to initalise these...
+            this._learnerController = new LearnerController();
         }
         public static void Main(string[] args)
         {
@@ -21,10 +18,8 @@ namespace SLDBootcamp
             Program p = new Program();
 
             // Import Learner json Data
-            var importedLearners = p.learnerController.ImportLearnerJson();
-            p.learnerController.ValidateListOflearners(importedLearners);
-            var validationMessages = p.validationService.LearnerValidation(importedLearners);
-            p.validationService.PrintValidationMessages(validationMessages);
+            var importedLearners = p._learnerController.ImportLearnerJson();
+            p._learnerController.ValidateListOflearners(importedLearners);
 
             // Export Learner json Data
             /*
