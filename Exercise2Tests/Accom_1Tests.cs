@@ -9,6 +9,7 @@ namespace SLDBootcamp.Tests
         public void Validate_True()
         {
             // Arrange
+            var accom_1 = new Accom_1();
             var testLearner = new Learner
             {
                 familyName = "Sterling",
@@ -18,7 +19,7 @@ namespace SLDBootcamp.Tests
             };
 
             // Act
-            bool validityStatus = Accom_1.VerifyAccom(testLearner);
+            bool validityStatus = accom_1.VerifyAccom(testLearner);
             // Assert
             Assert.True(validityStatus);
         }
@@ -27,6 +28,7 @@ namespace SLDBootcamp.Tests
         public void Validate_Accom_01_False()
         {
             // Arrange
+            var accom_1 = new Accom_1();
             var testLearner = new Learner
             {
                 familyName = "Kayne",
@@ -35,7 +37,7 @@ namespace SLDBootcamp.Tests
                 accom = 0
             };
             // Act
-            bool validityStatus = Accom_1.VerifyAccom(testLearner);
+            bool validityStatus = accom_1.VerifyAccom(testLearner);
             // Assert
             Assert.False(validityStatus);
         }
